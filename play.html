@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>play</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8"/>
+  </head>
+
+  <style>
+    html {
+      background: url(Black-bg.jpg) center fixed no-repeat;
+      background-size: cover;
+    }
+    p {
+      color: pink;
+    }
+    div.absolute-red {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+    div.absolute-pink {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#draggable1" ).draggable();
+  });
+  </script>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#draggable2" ).draggable();
+  });
+  </script>
+
+
+  <body>
+    <p>Hello my name is Megan</p>
+    <div class="absolute-red">
+      <p z-index=0>U can drag the lights</p>
+      <img src="red-orb.png" height=355px id="draggable1">
+    </div>
+    <div class="absolute-pink">
+      <img src="pink-orb.png" height=600 id="draggable2">
+    </div>
+    <br>
+  </body>
+</html>
