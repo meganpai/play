@@ -7,12 +7,24 @@
   </head>
 
   <style>
-    html {
+  @font-face {
+    font-family: "Dank-Mono";
+    src: url("assets/DankMono-Regular.ttf");
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Dank-Mono", monospace;
+    src: url("assets/Dank-Mono-Italic.ttf");
+    font-style: italic;
+  }
+  html {
       background: url(Black-bg.jpg) center fixed no-repeat;
       background-size: cover;
     }
     p {
       color: pink;
+      font-family: "Dank-Mono";
     }
     div.absolute-red {
       position: absolute;
@@ -23,6 +35,16 @@
       position: absolute;
       top: 0;
       left: 0;
+    }
+    #time {
+      font-family: "Dank-Mono";
+      font-size: 17px;
+      color: pink;
+      margin-top: 25px;
+      margin-left: 250px;
+      padding: 0px;
+      position: absolute;
+      z-index: 4;
     }
   </style>
 
@@ -43,8 +65,33 @@
   });
   </script>
 
+  <script>
+  function checkTime(i) {
+    if (i < 10) {
+    i = "0" + i;
+  }
+    return i;
+  }
 
-  <body>
+  function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById("time").innerHTML = h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+  }
+  function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+  }
+  </script>
+
+
+  <body onload="startTime()">
+    <div id="time"></div>
     <p>Hello my name is Megan. Welcome to page two. Hello???</p>
     <div class="absolute-red">
       <p z-index=0>U can drag the lights</p>
